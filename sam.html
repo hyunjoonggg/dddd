@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>도형 계산기</title>
+</head>
+<body>
+    <h1>도형 계산기</h1>
+    <form method="post">
+        <h2>삼각형</h2>
+        밑변: <input type="number" name="tri_base" required><br>
+        높이: <input type="number" name="tri_height" required><br>
+        <input type="submit" value="계산"><br>
+        <?php
+        if ($_POST) {
+            $tri_base = $_POST["tri_base"];
+            $tri_height = $_POST["tri_height"];
+            $tri_area = $tri_base * $tri_height / 2;
+            echo "면적: $tri_area";
+        }
+        ?>
+        <hr>
+        <h2>직사각형</h2>
+        가로: <input type="number" name="rec_width" required><br>
+        세로: <input type="number" name="rec_height" required><br>
+        <input type="submit" value="계산"><br>
+        <?php
+        if ($_POST) {
+            $rec_width = $_POST["rec_width"];
+            $rec_height = $_POST["rec_height"];
+            $rec_area = $rec_width * $rec_height;
+            echo "면적: $rec_area";
+        }
+        ?>
+        <hr>
+        <h2>원</h2>
+        반지름: <input type="number" name="cir_radius" required><br>
+        <input type="submit" value="계산"><br>
+        <?php
+        if ($_POST) {
+            $cir_radius = $_POST["cir_radius"];
+            $cir_area = pi() * $cir_radius ** 2;
+            echo "면적: $cir_area";
+        }
+        ?>
+        <hr>
+        <h2>직육면체</h2>
+        가로: <input type="number" name="box_width" required><br>
+        세로: <input type="number" name="box_length" required><br>
+        높이: <input type="number" name="box_height" required><br>
+        <input type="submit" value="계산"><br>
+        <?php
+        if ($_POST) {
+            $box_width = $_POST["box_width"];
+            $box_length = $_POST["box_length"];
+            $box_height = $_POST["box_height"];
+            $box_volume = $box_width * $box_length * $box_height;
+            echo "체적: $box_volume";
+        }
+        ?>
+        <hr>
+        <h2>원통</h2>
+        반지름: <input type="number" name="cyl_radius" required><br>
+        높이: <input type="number" name="cyl_height" required><br>
+        <input type="submit" value="계산"><br>
+        <?php
+        if ($_POST) {
+            $cyl_radius = $_POST["cyl_radius"];
+            $cyl_height = $_POST["cyl_height"];
+            $cyl_volume = pi() * $cyl_radius ** 2 * $cyl_height;
+            echo "체적: $cyl_volume";
+        }
+       
